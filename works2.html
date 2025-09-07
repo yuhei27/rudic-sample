@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rudic Films</title>
+    <link rel="stylesheet" href="css/style.css">
+    <!-- <script src="js/contact.js" defer></script> -->
+</head>
+
+<body>
+
+    <header>
+        <div class="header-div">
+            <h1><img src="img/logo_背景透過.png" alt="RUDIC FILMS" class="header-h1"></h1>
+            <nav class="header-nav">
+                <ul class="header-ul">
+                    <li class="header-li"><a href="index.html" class="header-a">Home</a></li>
+                    <li class="header-li"><a href="work.html" class="header-a">Works</a></li>
+                    <li class="header-li"><a href="plan.html" class="header-a">Plan</a></li>
+                    <li class="header-li"><a href="contact.html" class="header-a">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+        <p class="pankuzu"><a href="work.html" class="pankuzu-a">Works</a> > 制作実績</p>
+    </header>
+
+    <main>
+
+        <article class="gallery1-2">
+            <div class="gallery-img-2">
+                <img src="img/masato1.jpg" alt="">
+            </div>
+            <ul class="gallery-list-2">
+                <li><img src="img/masato1.jpg" alt=""></li>
+                <li><img src="img/masato2.jpg" alt=""></li>
+                <li><img src="img/masato3.jpg" alt=""></li>
+                <li><img src="img/masato4.jpg" alt=""></li>
+                <li><img src="img/masato5.jpg" alt=""></li>
+                <li><img src="img/masato6.jpg" alt=""></li>
+                <li><img src="img/masato7.jpg" alt=""></li>
+                <li><img src="img/masato8.jpg" alt=""></li>
+                <li><img src="img/masato9.jpg" alt=""></li>
+            </ul>
+        </article>
+
+    </main>
+
+    <footer>
+        <nav class="footer-nav">
+            <div class="footer-image">
+                <img src="img/logo_背景透過.png" class="footer-img">
+            </div>
+            <div class="footer-div">
+                <div class="footer-logo">
+                    <img src="img/mail.svg" class="footer-logo1">
+                    <img src="img/Instagram_Glyph_Black.svg" class="footer-logo2">
+                </div>
+                <ul class="footer-ul">
+                    <li class="footer-li"><a href="index.html" class="header-a">Home</a></li>
+                    <li class="footer-li"><a href="work.html" class="header-a">Works</a></li>
+                    <li class="footer-li"><a href="plan.html" class="header-a">Plan</a></li>
+                    <li class="footer-li"><a href="contact.html" class="header-a">Contact</a></li>
+                </ul>
+                <p class="footer-p">&copy;2025 Rudic Films</p>
+            </div>
+        </nav>
+    </footer>
+
+    <script>
+        const galleryList = document.querySelectorAll(".gallery-list-2 img");
+        const galleryImg = document.querySelector(".gallery-img-2 img");
+
+        galleryList.forEach((list) => {
+            list.addEventListener("mouseover", (event) => {
+                galleryImg.src = event.target.src;
+                galleryImg.animate({ opacity: [0, 1] }, 500);
+            });
+        });
+
+        /*--------------------------------------------------------------------------------- */
+
+        const header = document.querySelector(".header-div");
+        const footer = document.querySelector("footer");
+
+        const text4 = (items) => {
+            items.forEach((item) => {
+                if (item.isIntersecting) {
+                    header.animate(
+                        { opacity: [1, 0] },
+                        {
+                            duration: 200,
+                            fill: "forwards",
+                        }
+                    );
+                } else {
+                    header.animate(
+                        { opacity: [0, 1] },
+                        {
+                            duration: 1000,
+                            fill: "forwards",
+                        }
+                    );
+                }
+            });
+        };
+
+        const Observer4 = new IntersectionObserver(text4);
+        Observer4.observe(footer);
+    </script>
+
+</body>
+
+</html>
