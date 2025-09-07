@@ -39,7 +39,8 @@ body {
 /* header--------------------------------------------------------------------------------- */
 
 header {
-    width: 1400px;
+    width: 100%;
+    max-width: 1400px;
     height: 100px;
     position: fixed;
     top: 0;
@@ -146,7 +147,8 @@ header {
 /* index.html sec-about--------------------------------------------------------------------------------- */
 
 .sec {
-    width: 1400px;
+    width: 100%;
+    max-width: 1400px;
     margin: 0 auto;
 }
 
