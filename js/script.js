@@ -1,3 +1,9 @@
+const loading = document.querySelector(".loading");
+
+window.addEventListener("load", () => {
+  loading.classList.add("loaded");
+});
+
 // テキスト浮き出し---------------------------------------------------------------------------------
 
 const mainP = document.querySelector(".main-p");

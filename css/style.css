@@ -9,6 +9,29 @@
     font-family: sans-serif;
 }
 
+.loading {
+    position: fixed;
+    z-index: 9999;
+    background-color: whitesmoke;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.loading img {
+    height: 100px;
+    width: 300px;
+    object-fit: cover;
+}
+
+.loaded {
+    opacity: 0;
+    visibility: hidden;
+}
+
 body {
     background-color: rgb(220, 220, 220, 0.5);
 }
